@@ -2862,7 +2862,6 @@ ul.our-cases h2 a {
 @media (max-width:599px) {
   .github__hero__title {
     font-size: 32px;
-    font-weight: 300;
   }
 }
 @media (min-width:1600px) {
