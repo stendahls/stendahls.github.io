@@ -2577,7 +2577,6 @@ ul.our-cases h2 a {
 .top-bar .top-bar-section .main-nav li {
     margin: 0.5em 0;
     position: relative;
-    background: url(/sites/all/themes/stendahls-14/images/pipe.png) 100% 0 no-repeat;
     background-size: 5px 20px;
     padding: 0 1.125em 0 0.5em;
 }
@@ -2852,6 +2851,7 @@ ul.our-cases h2 a {
 }
 .github__hero__title span,
 .github__hero__text span {
+  display: inline-block;
   padding: 0.1em 0.3em;
   background: #000;
 }
@@ -2879,7 +2879,6 @@ ul.our-cases h2 a {
 .github__hero__text span {
   margin: 0.5em 0;
   padding: 0.2em 0.3em;
-  display: inline-block;
 }
 
 .github__buzz {
@@ -2942,4 +2941,22 @@ ul.our-cases h2 a {
 .github__list__link:hover {
   color: #07e3d4;
   background: #000;
+}
+
+.lang-sv,
+.github__hero__title .lang-sv,
+.github__hero__text .lang-sv  {
+  display: none;
+}
+.sv .lang-en,
+.sv .github__hero__title .lang-en,
+.sv .github__hero__text .lang-en {
+  display: none;
+}
+.sv .lang-sv {
+  display: inline;
+}
+.sv .github__hero__title .lang-sv,
+.sv .github__hero__text .lang-sv {
+  display: inline-block;
 }

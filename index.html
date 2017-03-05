@@ -29,7 +29,16 @@
 
   </script>
 </head>
-<body c>
+<body>
+  
+  <script>
+  var language = window.navigator.userLanguage || window.navigator.language;
+  if (language.indexOf('sv') >= 0) {
+    document.querySelector('html').setAttribute('lang','sv-SE')
+    document.body.classList.add('sv');
+  }
+  </script>
+  
   <div class="skip-link">
     <a href="#main-content" class="element-invisible">Skip to main content</a>
   </div>
@@ -49,7 +58,12 @@
   					<section class="top-bar-section">
   						<ul id="main-menu" class="main-nav">
                 <li class="first expanded"><a href="/" class="active">Github</a></li>
-                <li class="expanded"><a href="https://www.stendahls.se/">Main website</a></li>
+                <li class="expanded">
+                  <a href="https://www.stendahls.se/">
+                    <span class="lang-en">Main website</span>
+                    <span class="lang-sv">Huvudsajt</span>
+                  </a>
+                </li>
               </ul>
             </section>
   				</nav>
@@ -67,10 +81,19 @@
             <div class="large-12 columns github__hero__inner">
       			  <div class="panel-pane pane-block pane-block-1 pane-block callout white"  >
 
-                <h1 class="github__hero__title"><span>Hello.</span></h1>
-                <h2 class="github__hero__title"><span>We're developers, just like you.</span></h2>
+                <h1 class="github__hero__title">
+                  <span class="lang-en">Hello.</span>
+                  <span class="lang-sv">Hej.</span>
+                </h1>
+                <h2 class="github__hero__title">
+                  <span class="lang-en">We're developers, just like you.</span>
+                  <span class="lang-sv">Vi är utvecklare - som ni precis.</span>
+                </h2>
                 
-                <p class="github__hero__text"><span>We are a Swedish digital creative agency in central Gothenburg that designs experiences which are loved and shared. We have a great work environment that lets everyone grow and feel an important part of all our projects. Oh, and we have free breakfast. <a href="mailto:jobs@stendahls.se">Join us</a>.</span></p>
+                <p class="github__hero__text">
+                  <span class="lang-en">We are a Swedish digital creative agency in central Gothenburg that designs experiences which are loved and shared. We have a great work environment that lets everyone grow and feel an important part of all our projects. Oh, and we have free breakfast. <a href="mailto:jobs@stendahls.se">Join us</a>.</span>
+                  <span class="lang-sv">We are a Swedish digital creative agency in central Gothenburg that designs experiences which are loved and shared. We have a great work environment that lets everyone grow and feel an important part of all our projects. Oh, and we have free breakfast. <a href="mailto:jobs@stendahls.se">Join us</a>.</span>
+                </p>
 
               </div>
             </div>
@@ -82,15 +105,28 @@
             <div class="large-12 columns">
       			  <div class="panel-pane pane-views github__buzz__inner">
                 
-                <h2>We speak your language.</h2>
+                <h2>
+                  <span class="lang-en">We speak your language.</span>
+                  <span class="lang-sv">Vi prata ditt språk.</span>
+                </h2>
                 
-                <p><i>Front-end:</i> HTML5, CSS3, JS, responsive, a11y, ES2016, Grunt, Gulp, Webpack, Vue, Angular, React, jQuery, AMP, PWA, perf</p>
+                <p>
+                  <i>Front-end:</i> 
+                  HTML5, CSS3, JS, responsive, a11y, ES2016, Grunt, Gulp, Webpack, Vue, Angular, React, jQuery, AMP, PWA, perf
+                </p>
                 
-                <p><i>Back-end:</i> .NET, C#, Sitecore, EpiServer, Wordpress, AWS</p>
+                <p>
+                  <i>Back-end:</i> .NET, C#, Sitecore, EpiServer, Wordpress, AWS
+                </p>
                 
-                <p><i>App-dev:</i> Objective-C, Swift, Java</p>
+                <p>
+                  <i>App-dev:</i> Objective-C, Swift, Java
+                </p>
                 
-                <p>If you want to join our team, we often have openings and are always interested in chatting with smart people. <a href="https://www.stendahls.se/contact">Contact us</a>.</p>
+                <p>
+                  <span class="lang-en">If you want to join our team, we often have openings and are always interested in chatting with smart people. <a href="https://www.stendahls.se/contact">Contact us</a>.</span>
+                  <span class="lang-sv">If you want to join our team, we often have openings and are always interested in chatting with smart people. <a href="https://www.stendahls.se/contact">Contact us</a>.</span>
+                </p>
                 
               </div>
             </div>
@@ -102,9 +138,15 @@
             <div class="large-12 columns">
       			  <div class="panel-pane pane-views github__list__inner">
                 
-                <h2>We're starting to share some of our snippets of code with GitHub.</h2>
+                <h2>
+                  <span class="lang-en">We're starting to share some of our snippets of code on GitHub.</span>
+                  <span class="lang-sv">We're starting to share some of our snippets of code on GitHub.</span>
+                </h2>
                 
-                <p>Because we love the web and code. Check back to see more projects as they become available:</p>
+                <p>
+                  <span class="lang-en">Because we love the web and open source code. Check back to see more projects as they become available:</span>
+                  <span class="lang-sv">Because we love the web and open source code. Check back to see more projects as they become available:</span>
+                </p>
                 
                 <table>
                   
@@ -112,13 +154,34 @@
                     <td class="github__list__col1"><img src="https://stendahls.github.io/device-lab/imgs/icon-radar-384.png" alt="device radar"  class="github__list__icon"></td>
                     <td class="github__list__col2">
                       <h3>Device lab</h3>
-                      <p>A work-in-progress suite of web apps to compliment our device testing lab, powered by Google Analytics API, including:</p>
+                      <p>
+                        <span class="lang-en">A work-in-progress suite of web apps to compliment our device testing lab, powered by Google Analytics API, including:</span>
+                        <span class="lang-sv">A work-in-progress suite of web apps to compliment our device testing lab, powered by Google Analytics API, including:</span>
+                      </p>
                       <ul>
-                        <li><i>Device radar</i>, our interface to give us a snapshot view of the device and browser landscape in all our client sites.</li>
-                        <li><i>Device percent</i>, a default screen for phones and tablets in our device testing lab, showing the actual amount of traffic using that type of device for each client site.</li>
+                        <li>
+                          <i>Device radar</i>, 
+                          <span class="lang-en">our interface to give us a snapshot view of the device and browser landscape in all our client sites.</span>
+                          <span class="lang-sv">our interface to give us a snapshot view of the device and browser landscape in all our client sites.</span>
+                        </li>
+                        <li>
+                          <i>Device percent</i>, 
+                          <span class="lang-en">a default screen for phones and tablets in our device testing lab, showing the actual amount of traffic using that type of device for each client site.</span>
+                          <span class="lang-sv">a default screen for phones and tablets in our device testing lab, showing the actual amount of traffic using that type of device for each client site.</span>
+                        </li>
                       </ul>
-                      <div><a href="https://github.com/stendahls/device-lab/" class="github__list__link">Github repo</a></div>
-                      <div><a href="https://stendahls.github.io/device-lab/" class="github__list__link">Github page</a></div>
+                      <div>
+                        <a href="https://github.com/stendahls/device-lab/" class="github__list__link">
+                          <span class="lang-en">Github repo</span>
+                          <span class="lang-sv">Github repo</span>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="https://stendahls.github.io/device-lab/" class="github__list__link">
+                          <span class="lang-en">Github page</span>
+                          <span class="lang-sv">Github sidan</span>
+                        </a>
+                      </div>
                     </td>
                   </tr>
                     
@@ -126,9 +189,22 @@
                     <td class="github__list__col1"></td>
                     <td class="github__list__col2">
                       <h3>GA Device deep</h3>
-                      <p>A Google Analytics extension to get deeper analytics on the type of iOS and Android devices visiting your site.</p>
-                      <div><a href="https://github.com/stendahls/ga-device-deep/" class="github__list__link">Github repo</a></div>
-                      <div><a href="https://stendahls.github.io/ga-device-deep/" class="github__list__link">Github example test page</a></div>
+                      <p>
+                        <span class="lang-en">A Google Analytics extension to get deeper analytics on the type of iOS and Android devices visiting your site.</span>
+                        <span class="lang-sv">A Google Analytics extension to get deeper analytics on the type of iOS and Android devices visiting your site.</span>
+                      </p>
+                      <div>
+                        <a href="https://github.com/stendahls/ga-device-deep/" class="github__list__link">
+                          <span class="lang-en">Github repo</span>
+                          <span class="lang-sv">Github repo</span>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="https://stendahls.github.io/ga-device-deep/" class="github__list__link">
+                          <span class="lang-en">Github example test page</span>
+                          <span class="lang-sv">Github exempel provsidan</span>
+                        </a>
+                      </div>
                     </td>
                   </tr>
                   
