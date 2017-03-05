@@ -2199,16 +2199,6 @@ button.large,.button.large {
     background: #970b0e;
 }
 
-.top-bar-section ul li:hover > a {
-    background: #f7f7f7;
-    color: white;
-}
-
-.top-bar-section ul li.active > a {
-    background: #f7f7f7;
-    color: white;
-}
-
 .top-bar-section .has-form {
     padding: 15px;
 }
@@ -2357,19 +2347,10 @@ button.large,.button.large {
         display: none;
     }
 
-    .top-bar-section li.hover > a:not(.button) {
-        background: #f7f7f7;
-        color: white;
-    }
-
     .top-bar-section li a:not(.button) {
         padding: 0 15px;
         line-height: 45px;
         background: none;
-    }
-
-    .top-bar-section li a:not(.button):hover {
-        background: #f7f7f7;
     }
 
     .top-bar-section .has-dropdown > a {
@@ -2458,18 +2439,9 @@ button.large,.button.large {
         right: 100%;
     }
 
-    .no-js .top-bar-section ul li:hover > a {
-        background: #f7f7f7;
-        color: white;
-    }
-
     .no-js .top-bar-section ul li:active > a {
         background: #f7f7f7;
         color: white;
-    }
-
-    .no-js .top-bar-section .has-dropdown:hover > .dropdown {
-        display: block;
     }
 }
 
@@ -2858,7 +2830,7 @@ ul.our-cases h2 a {
 }
 
 .l-header {
-  padding-top: 20px;
+  padding-top: 35px;
 }
 .github__hero {
   color: #fff;
@@ -2936,12 +2908,13 @@ ul.our-cases h2 a {
   width: 128px;
   height: 128px;
   background: #eee;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 @media (max-width:599px) {
   .github__list__col1:before {
     width: 64px;
     height: 64px;
+    border-radius: 8px;
   }
 }
 .github__list__col2 {
@@ -2965,4 +2938,8 @@ ul.our-cases h2 a {
   padding: 0.2em 0.5em;
   display: inline-block;
   margin: 0 0 0.5em;
+}
+.github__list__link:hover {
+  color: #07e3d4;
+  background: #000;
 }
