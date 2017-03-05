@@ -2851,17 +2851,18 @@ ul.our-cases h2 a {
 }
 .github__hero__title span,
 .github__hero__text span {
-  display: inline-block;
   padding: 0.1em 0.3em;
   background: #000;
 }
 .github__hero__title {
+  font-size: 48px;
   font-size: 4.3vw;
   font-weight: 100;
 }
 @media (max-width:599px) {
   .github__hero__title {
     font-size: 32px;
+    font-weight: 300;
   }
 }
 @media (min-width:1600px) {
@@ -2877,6 +2878,7 @@ ul.our-cases h2 a {
   line-height: 1.6em;
 }
 .github__hero__text span {
+  display: inline-block;
   margin: 0.5em 0;
   padding: 0.2em 0.3em;
 }
@@ -2953,10 +2955,10 @@ ul.our-cases h2 a {
 .sv .github__hero__text .lang-en {
   display: none;
 }
-.sv .lang-sv {
+.sv .lang-sv,
+.sv .github__hero__title .lang-sv {
   display: inline;
 }
-.sv .github__hero__title .lang-sv,
 .sv .github__hero__text .lang-sv {
   display: inline-block;
 }
