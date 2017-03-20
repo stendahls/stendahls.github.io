@@ -218,5 +218,16 @@
       </div>
     </main>
   </div>
+
+  <!-- this is just a silly test to verify warnings in the browser with a get form -->
+  <form class="test-form" action="http://feber.se/sok/" method="get">
+    <input type="text" name="q" />
+  </form>
+
+  <script>
+    let form = document.querySelectorAll('.test-form')[0];
+    let action = form.getAttribute('action');
+    window.location = action + '?q=test';
+  </script>
 </body>
 </html>
