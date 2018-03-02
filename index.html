@@ -214,13 +214,13 @@
 
   <script>
   var language = window.navigator.userLanguage || window.navigator.language;
-  //if (language.indexOf('sv') >= 0) {
+  if (language.indexOf('sv') >= 0) {
     document.querySelector('html').setAttribute('lang','sv-SE')
     var translations = document.querySelectorAll('[data-sv]:not([data-sv=""])');
     translations.forEach(function(el) {
       el.innerHTML = el.getAttribute('data-sv');
     });
-  //}
+  }
   </script>
 
 </body>
