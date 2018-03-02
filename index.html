@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 🇸🇪 Hello devs. We're afraid there's not a great deal to see here, this site is a quick copy and tweak of our main website, and as such has some slightly shameful 2 year old practices (shock!) and inherited code. I'd tear up the CSS selectors for one. But it does the job acceptably well and we have so many more interesting client projects to do that devoting 2 hours to build this page seemed about right. Come and join us and help us build a better github page... 😎 -->
+<!-- 🇸🇪 Hello devs. We're afraid there's not a great deal to see here, this site is a quick copy and tweak of our previous website, and as such has some slightly shameful 2 year old practices (shock!) and inherited code. I'd tear up the CSS selectors for one. But it does the job acceptably well and we have so many more interesting client projects to do that devoting 2 hours to build this page seemed about right. Come and join us and help us build a better github page... 😎 -->
 <html class="no-js" lang="en">
 
 <head>
@@ -31,14 +31,6 @@
 </head>
 <body>
   
-  <script>
-  var language = window.navigator.userLanguage || window.navigator.language;
-  if (language.indexOf('sv') >= 0) {
-    document.querySelector('html').setAttribute('lang','sv-SE')
-    document.body.classList.add('sv');
-  }
-  </script>
-  
   <div class="skip-link">
     <a href="#main-content" class="element-invisible">Skip to main content</a>
   </div>
@@ -60,8 +52,7 @@
                 <li class="first expanded"><a href="/" class="active">Github</a></li>
                 <li class="expanded">
                   <a href="https://www.stendahls.se/">
-                    <span class="lang-en">Main website</span>
-                    <span class="lang-sv">Huvudsajt</span>
+                    <span data-js-lang data-sv="Huvudsajt">Main website</span>
                   </a>
                 </li>
               </ul>
@@ -82,17 +73,14 @@
       			  <div class="panel-pane pane-block pane-block-1 pane-block callout white"  >
 
                 <h1 class="github__hero__title">
-                  <span class="lang-en">Hello.</span>
-                  <span class="lang-sv">Hej.</span>
+                  <span data-js-lang data-sv="Hej.">Hello.</span>
                 </h1>
                 <h2 class="github__hero__title">
-                  <span class="lang-en">We're developers, just like you.</span>
-                  <span class="lang-sv">Vi är utvecklare - som ni precis.</span>
+                  <span data-js-lang data-sv="Vi är utvecklare - som ni precis.">We're developers, just like you.</span>
                 </h2>
                 
                 <p class="github__hero__text">
-                  <span class="lang-en">We are a Swedish digital creative agency in central Gothenburg that designs experiences which are loved and shared. We have a great work environment that lets everyone grow and feel an important part of all our projects. Oh, and we have free breakfast. <a href="mailto:jobs@stendahls.se">Join us</a>.</span>
-                  <span class="lang-sv">We are a Swedish digital creative agency in central Gothenburg that designs experiences which are loved and shared. We have a great work environment that lets everyone grow and feel an important part of all our projects. Oh, and we have free breakfast. <a href="mailto:jobs@stendahls.se">Join us</a>.</span>
+                  <span data-js-lang data-sv="Vi är en svensk digitalbyrå som ligga i centrala Göteborg och som skapa upplevelsare som folk älskar. Stendahls har en kanon arbetsmiljö som låter alla utveckla sig och känner sig som en kritisk del av varje projekt. Och vi får frukost. <a href='mailto:jobs@stendahls.se'>Gå med oss</a>.">We are a Swedish digital creative agency in central Gothenburg that designs experiences which are loved and shared. We have a great work environment that lets everyone grow and feel an important part of all our projects. Oh, and we have free breakfast. <a href="mailto:jobs@stendahls.se">Join us</a>.</span>
                 </p>
 
               </div>
@@ -106,13 +94,12 @@
       			  <div class="panel-pane pane-views github__buzz__inner">
                 
                 <h2>
-                  <span class="lang-en">We speak your language.</span>
-                  <span class="lang-sv">Vi prata ditt språk.</span>
+                  <span data-js-lang data-sv="Vi prata ditt språk.">We speak your language.</span>
                 </h2>
                 
                 <p>
                   <i>Front-end:</i> 
-                  HTML5, CSS3, JS, responsive, a11y, ES2016, Grunt, Gulp, Webpack, Vue, Angular, React, jQuery, AMP, PWA, perf
+                  HTML5, CSS3, JS, responsive, a11y, ES2016, Gulp, Grunt, Webpack, React, Vue, Angular, Webcomponents, jQuery, AMP, PWA, perf
                 </p>
                 
                 <p>
@@ -124,8 +111,7 @@
                 </p>
                 
                 <p>
-                  <span class="lang-en">If you want to join our team, we often have openings and are always interested in chatting with smart people. <a href="https://www.stendahls.se/contact">Contact us</a>.</span>
-                  <span class="lang-sv">If you want to join our team, we often have openings and are always interested in chatting with smart people. <a href="https://www.stendahls.se/contact">Contact us</a>.</span>
+                  <span data-js-lang data-sv="">If you want to join our team, we often have openings and are always interested in chatting with smart people. <a href="https://www.stendahls.se/contact">Contact us</a>.</span>
                 </p>
                 
               </div>
@@ -139,47 +125,40 @@
       			  <div class="panel-pane pane-views github__list__inner">
                 
                 <h2>
-                  <span class="lang-en">We're starting to share some of our snippets of code on GitHub.</span>
-                  <span class="lang-sv">We're starting to share some of our snippets of code on GitHub.</span>
+                  <span data-js-lang data-sv="">We're starting to share some of our snippets of code on GitHub.</span>
                 </h2>
                 
                 <p>
-                  <span class="lang-en">Because we love the web and open source code. Check back to see more projects as they become available:</span>
-                  <span class="lang-sv">Because we love the web and open source code. Check back to see more projects as they become available:</span>
+                  <span data-js-lang data-sv="">Because we love the web and open source code. Check back to see more projects as they become available:</span>
                 </p>
                 
                 <table>
-                  
+
                   <tr>
                     <td class="github__list__col1"><img src="https://stendahls.github.io/device-lab/imgs/icon-radar-384.png" alt="device radar"  class="github__list__icon"></td>
                     <td class="github__list__col2">
                       <h3>Device lab</h3>
                       <p>
-                        <span class="lang-en">A work-in-progress suite of web apps to compliment our device testing lab, powered by Google Analytics API, including:</span>
-                        <span class="lang-sv">A work-in-progress suite of web apps to compliment our device testing lab, powered by Google Analytics API, including:</span>
+                        <span data-js-lang data-sv="">A work-in-progress suite of web apps to compliment our device testing lab, powered by Google Analytics API, including:</span>
                       </p>
                       <ul>
                         <li>
                           <i>Device radar</i>, 
-                          <span class="lang-en">our interface to give us a snapshot view of the device and browser landscape in all our client sites.</span>
-                          <span class="lang-sv">our interface to give us a snapshot view of the device and browser landscape in all our client sites.</span>
+                          <span data-js-lang data-sv="">our interface to give us a snapshot view of the device and browser landscape in all our client sites.</span>
                         </li>
                         <li>
                           <i>Device percent</i>, 
-                          <span class="lang-en">a default screen for phones and tablets in our device testing lab, showing the actual amount of traffic using that type of device for each client site.</span>
-                          <span class="lang-sv">a default screen for phones and tablets in our device testing lab, showing the actual amount of traffic using that type of device for each client site.</span>
+                          <span data-js-lang data-sv="">a default screen for phones and tablets in our device testing lab, showing the actual amount of traffic using that type of device for each client site.</span>
                         </li>
                       </ul>
                       <div>
                         <a href="https://github.com/stendahls/device-lab/" class="github__list__link">
-                          <span class="lang-en">Github repo</span>
-                          <span class="lang-sv">Github repo</span>
+                          <span data-js-lang data-sv="">Github repo</span>
                         </a>
                       </div>
                       <div>
                         <a href="https://stendahls.github.io/device-lab/" class="github__list__link">
-                          <span class="lang-en">Github page</span>
-                          <span class="lang-sv">Github sidan</span>
+                          <span data-js-lang data-sv="">Github page</span>
                         </a>
                       </div>
                     </td>
@@ -190,19 +169,16 @@
                     <td class="github__list__col2">
                       <h3>GA Device deep</h3>
                       <p>
-                        <span class="lang-en">A Google Analytics extension to get deeper analytics on the type of iOS and Android devices visiting your site.</span>
-                        <span class="lang-sv">A Google Analytics extension to get deeper analytics on the type of iOS and Android devices visiting your site.</span>
+                        <span data-js-lang data-sv="">A Google Analytics extension to get deeper analytics on the type of iOS and Android devices visiting your site.</span>
                       </p>
                       <div>
                         <a href="https://github.com/stendahls/ga-device-deep/" class="github__list__link">
-                          <span class="lang-en">Github repo</span>
-                          <span class="lang-sv">Github repo</span>
+                          <span data-js-lang data-sv="">Github repo</span>
                         </a>
                       </div>
                       <div>
                         <a href="https://stendahls.github.io/ga-device-deep/" class="github__list__link">
-                          <span class="lang-en">Github example test page</span>
-                          <span class="lang-sv">Github exempel provsidan</span>
+                          <span data-js-lang data-sv="">Github example test page</span>
                         </a>
                       </div>
                     </td>
@@ -218,6 +194,18 @@
       </div>
     </main>
   </div>
+  
+  <script>
+  var language = window.navigator.userLanguage || window.navigator.language;
+  //if (language.indexOf('sv') >= 0) {
+    document.querySelector('html').setAttribute('lang','sv-SE')
+    var translations = document.querySelectorAll('[data-sv]:not([data-sv=""])');
+    translations.forEach(function(el) {
+      el.innerHTML = el.getAttribute('data-sv');
+    });
+    console.log(translations)
+  //}
+  </script>
   
 </body>
 </html>
