@@ -2846,8 +2846,8 @@ ul.our-cases h2 a {
 }
 .github__hero__title,
 .github__hero__text {
-  margin: 0 auto -0.1em;
-  line-height: normal;
+  margin: 0 auto;
+  line-height: 1.4;
 }
 .github__hero__title span,
 .github__hero__text span {
