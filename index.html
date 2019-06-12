@@ -43,7 +43,7 @@
   					<ul class="title-area">
   						<li class="name">
                 <h1>
-                  <a href="https://www.stendahls.se/" rel="home" title="Stendahls Home" class="active">Stendahls</a>
+                  <a href="https://www.stendahls.se/" rel="home" title="Stendahls Home" js-ga-link>Stendahls</a>
                   GitHub
                 </h1>
               </li>
@@ -52,7 +52,7 @@
   						<ul id="main-menu" class="main-nav">
                 <li class="first expanded"><a href="/" class="active">Github</a></li>
                 <li class="expanded">
-                  <a href="https://www.stendahls.se/">
+                  <a href="https://www.stendahls.se/" js-ga-link>
                     <span data-sv="Huvudsajt">Main website</span>
                   </a>
                 </li>
@@ -81,7 +81,9 @@
                 </h2>
 
                 <p class="github__hero__text">
-                  <span data-sv="Vi är en svensk digitalbyrå som ligga i centrala Göteborg och som skapa upplevelsare som folk älskar. Stendahls har en kanon arbetsmiljö som låter alla utveckla sig och känner sig som en kritisk del av varje projekt. Och vi får frukost. <a href='mailto:jobs@stendahls.se'>Gå med oss</a>.">We are a Swedish digital creative agency in central Gothenburg that designs experiences which are loved and shared. We have a great work environment that lets everyone grow and feel an important part of all our projects. Oh, and we have free breakfast. <a href="mailto:jobs@stendahls.se">Join us</a>.</span>
+                  <span data-sv="Vi är en svensk digitalbyrå som ligga i centrala Göteborg och som skapa upplevelsare som folk älskar. Stendahls har en kanon arbetsmiljö som låter alla utveckla sig och känner sig som en kritisk del av varje projekt. Och vi får frukost. <a href='mailto:jobs@stendahls.se' js-ga-mailto>Gå med oss</a>.">
+                    We are a Swedish digital creative agency in central Gothenburg that designs experiences which are loved and shared. We have a great work environment that lets everyone grow and feel an important part of all our projects. Oh, and we have free breakfast. <a href="mailto:jobs@stendahls.se" js-ga-mailto>Join us</a>.
+                  </span>
                 </p>
 
               </div>
@@ -104,15 +106,20 @@
                 </p>
 
                 <p>
-                  <i>Back-end:</i> .NET, C#, Sitecore, EpiServer, Wordpress, AWS
+                  <i>Back-end:</i> 
+                  .NET, C#, Sitecore, EpiServer, Wordpress, AWS
                 </p>
 
                 <p>
-                  <i>App-dev:</i> Objective-C, Swift, Java
+                  <i>App-dev:</i> 
+                  Objective-C, Swift, Java
                 </p>
 
                 <p>
-                  <span data-sv="">If you want to join our team, we often have openings and are always interested in chatting with smart people. <a href="https://www.stendahls.se/contact">Contact us</a>.</span>
+                  <span data-sv="">
+                    If you want to join our team, we often have openings and are always interested in chatting with smart people. 
+                    <a href="https://www.stendahls.se/contact" js-ga-link>Contact us</a>.
+                  </span>
                 </p>
 
               </div>
@@ -144,7 +151,7 @@
                           Taskig makes it easy to execute code on different threads, e.g. background or main, and then compose these tasks via async/await methodology.</span>
                       </p>
                       <div>
-                        <a href="https://github.com/stendahls/Taskig" class="github__list__link">
+                        <a href="https://github.com/stendahls/Taskig" class="github__list__link" js-ga-link>
                           <span data-sv="">Github repo</span>
                         </a>
                       </div>
@@ -211,6 +218,43 @@
 
       </div>
     </main>
+  </div>
+
+  <div>
+    <h3>Sandbox area - please ignore</h3>
+
+    <h4>Downloads</h4>
+    <ul>
+      <li>
+          <a href="downloads-are-cool.doc" download>test download link</a>
+      </li>
+      <li>
+          <a href="http://uberdomain.com/long/path/to/dir/this-one-too.pdf#page1" download>another download link</a>
+      </li>
+      <li>
+          <a href="http://uberdomain.com/long/path/to/dir/no-download-attribute.pdf#page1">a link to a PDF without the "download" attribute</a>
+      </li>
+      <li>
+          <a href="http://uberdomain.com/long/path/to/dir/one-last-one.pdf?some-nasty-mobile-or-wifi-operators-inject-crap-into-href-links=yuk#morecrap" download>last one</a>
+      </li>
+    </ul>
+    <h4>Forms</h4>
+
+    <p><a href="##" js-ga-link>test link</a></p>
+    <p><a href="##" js-ga-click>test click</a></p>
+
+    <p><button js-ga-click>click button</button></p>
+    <p><button js-ga-click disabled="disabled">disabled button</button></p>
+
+    <form js-ga-submit> 
+      <label>
+        <input type="text" />
+        <button type="submit" >submit</button>
+      </label>
+    </form>
+    
+    <h4>Intersect</h4>
+    <u js-ga-intersect>this line will trigger GTM when it it 50% revealed</u>
   </div>
 
   <script>
