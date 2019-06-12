@@ -28,6 +28,16 @@
   <main>
     <h3>Sandbox area - please ignore</h3>
 
+    <h4>Links</h4>
+
+    <p><a href="##" js-ga-link>test link 1</a></p>
+    <p><a href="##" js-ga-link="link 2">test link 2</a></p>
+    <p><a href="##" js-ga-link="{l:'link 3'}">test link 2</a></p>
+    <p><a href="##" js-ga-link="{c:'ANOTHER CATEGORY',l:'link 4'}">test link 2</a></p>
+    <p><a href="##" js-ga-click>test click</a></p>
+
+    <p><button js-ga-click="{c:'ux',l:'this is a label for the intersect item 1'}">click button</button><button js-ga-click disabled="disabled">disabled button</button></p>
+
     <h4>Downloads</h4>
     <ul>
       <li>
@@ -44,17 +54,6 @@
       </li>
     </ul>
 
-    <h4>Links</h4>
-
-    <p><a href="##" js-ga-link>test link 1</a></p>
-    <p><a href="##" js-ga-link="link 2">test link 2</a></p>
-    <p><a href="##" js-ga-link="{l:'link 3'}">test link 2</a></p>
-    <p><a href="##" js-ga-link="{c:'ANOTHER CATEGORY',l:'link 4'}">test link 2</a></p>
-    <p><a href="##" js-ga-click>test click</a></p>
-
-    <p><button js-ga-click="{c:'ux',l:'this is a label for the intersect item 1'}">click button</button></p>
-    <p><button js-ga-click disabled="disabled">disabled button</button></p>
-
     <h4>Forms</h4>
 
     <form js-ga-submit> 
@@ -64,10 +63,10 @@
       </label>
       <label>
         input 2
-        <input type="checkbox" js-ga-change />
+        <input type="checkbox" js-ga-input-change />
       </label>
       <label for="test3">input 3</label>
-      <input id="test3" type="checkbox" js-ga-change />
+      <input id="test3" type="checkbox" js-ga-input-change />
       
       <button type="submit" >submit</button>
     </form>
