@@ -96,16 +96,16 @@
   <h4>Other</h4>
 
   <ul>
-      <li><u onclick="ga('send', {hitType:'event',eventCategory:'GA click test 1', eventClick: 'click'});">generate javascript error 1</u></li>
-      <li><u onclick="ga('send', 'event', 'GA click test 2', 'click');">generate javascript error 2</u></li>
-      <li><u onclick="ga('send', 'event', {eventCategory:'GA click test 3', eventClick: 'click'});">generate javascript error 3</u></li>
+      <li><u onclick="unassignedFunction()">generate javascript error</u></li>
   </ul>
 
   <hr />
 
   <h1>Google Analytics Sandbox area - please ignore</h1>
 
-  <p><button onclick="ga">click button</button></p>
+  <p><button onclick="ga('send', {hitType:'event',eventCategory:'GA click test 1', eventClick: 'click'});">GA test 2</button></p>
+  <p><button onclick="ga('send', 'event', 'GA click test 2', 'click');">GA test 2</button></p>
+  <p><button onclick="ga('send', 'event', {eventCategory:'GA click test 3', eventClick: 'click'});">GA test 3</button></p>
 
 
 
