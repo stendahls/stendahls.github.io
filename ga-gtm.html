@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- 🇸🇪 Hello devs. We're afraid there's not a great deal to see here, this site is a quick copy and tweak of our previous website, and as such has some slightly shameful 2 year old practices (shock!) and inherited code. I'd tear up the CSS selectors for one. But it does the job acceptably well and we have so many more interesting client projects to do that devoting 2 hours to build this page seemed about right. Come and join us and help us build a better github page... 😎 -->
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="ImageToolbar" content="false" />
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+
+
+  <!-- Google Analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    if (navigator.sendBeacon) {
+        ga('set', 'transport', 'beacon');
+    }
+
+    ga('create', 'UA-93076607-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P4XKPXC');</script>
+    <!-- End Google Tag Manager -->
+
+
+  <link rel="shortcut icon" href="https://www.stendahls.se/sites/default/files/32x32_0.png" />
+  <title>Stendahls | GTML sandbox</title>
+  <link rel="stylesheet" href="static/default.css" />
+	<link href='//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css' />
+</head>
+<body>
+  <a id="top"></a>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4XKPXC"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <main style="max-width: 800px; margin: 0 auto; padding: 20px;">
+    <h1>Google Tag Manager Sandbox area - please ignore</h1>
+
+    <h4>Links</h4>
+
+    <p><a href="#top" js-ga-link>test link 1</a></p>
+    <p><a href="#top" js-ga-link="attribute link 2">test link 2</a></p>
+    <p><a href="#top" js-ga-click>test click</a></p>
+    <p><a href="/" js-ga-link>internal link</a></p>
+    <p><a href="http://www.apple.com" js-ga-link>external link</a></p>
+
+    <p><button js-ga-click="{c:'ux',l:'this is a label for the intersect item 1'}">click button</button><button js-ga-click disabled="disabled">disabled button</button></p>
+
+    <h4>Downloads</h4>
+    <ul>
+      <li>
+          <a href="downloads-are-cool.doc" download>test download link</a>
+      </li>
+      <li>
+          <a href="http://uberdomain.com/long/path/to/dir/this-one-too.pdf#page1" download>another download link</a>
+      </li>
+      <li>
+          <a href="http://uberdomain.com/long/path/to/dir/no-download-attribute.pdf#page1">a link to a PDF without the "download" attribute</a>
+      </li>
+      <li>
+          <a href="http://uberdomain.com/long/path/to/dir/one-last-one.pdf?some-nasty-mobile-or-wifi-operators-inject-crap-into-href-links=yuk#morecrap" download>last one</a>
+      </li>
+    </ul>
+
+    <h4>Forms</h4>
+
+    <form js-ga-submit> 
+      <label>
+        input 1
+        <input type="text" />
+      </label>
+      <label>
+        input 2
+        <input type="checkbox" js-ga-input-change />
+      </label>
+      <label for="test3">input 3</label>
+      <input id="test3" type="checkbox" js-ga-input-change />
+      
+      <button type="submit" >submit</button>
+    </form>
+
+  <h4>Other</h4>
+
+  <ul>
+      <li><u onclick="ga('send', {hitType:'event',eventCategory:'GA test'});">generate javascript error</u></li>
+  </ul>
+
+  <hr />
+
+  <h1>Google Analytics Sandbox area - please ignore</h1>
+
+  <p><button onclick="ga">click button</button></p>
+
+
+
+  <div style="height: 1000px"></div>
+
+  <h4>Intersect</h4>  
+  <u js-ga-intersect>intersecting text 1</u>
+  <u js-ga-intersect="this is a label for the intersect item 1">intersecting text 2</u>
+
+  <div style="height: 300px"></div>
+
+</main>
+
+</body>
+</html>
