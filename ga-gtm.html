@@ -96,7 +96,9 @@
   <h4>Other</h4>
 
   <ul>
-      <li><u onclick="ga('send', {hitType:'event',eventCategory:'GA test'});">generate javascript error</u></li>
+      <li><u onclick="ga('send', {hitType:'event',eventCategory:'GA click test 1', eventClick: 'click'});">generate javascript error 1</u></li>
+      <li><u onclick="ga('send', 'event', 'GA click test 2', 'click');">generate javascript error 2</u></li>
+      <li><u onclick="ga('send', 'event', {eventCategory:'GA click test 3', eventClick: 'click'});">generate javascript error 3</u></li>
   </ul>
 
   <hr />
