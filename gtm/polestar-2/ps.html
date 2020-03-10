@@ -1,0 +1,469 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GTM conflict test</title>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event           : 'configuration_start',
+                config          : {
+                    productName : 'Polestar 2',
+                    productSku  : 'PS2',
+                    exterior    : 'Ext colour 1',
+                    interior    : 'Int colour 1'
+                }
+            });
+        </script>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T6SM3VW');</script>
+        <!-- End Google Tag Manager -->
+
+
+        <style>
+*, :after, :before {
+    box-sizing: border-box;
+}
+html,body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    height: 100%;
+}
+main {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.main__left {
+    flex: 1 0;
+    padding: 20px;
+    overflow: auto;
+}
+.main__left > * {
+    max-width: 50em;
+}
+.main__right {
+    flex: 0 0 400px;
+    background: #eee;
+    padding: 20px;
+}
+button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+.btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.tiles__body {
+    display: flex;
+}
+.tiles__item {
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    margin-right: 1.5rem;
+}
+.tile {
+    font-size: 11px;
+    overflow: visible;
+    text-align: left;
+    width: 100%;
+}
+.tile__figure {
+    display: block;
+    margin: 0 0 .5rem;
+    padding: 0 0 100%;
+    position: relative;
+    background: #666;
+}
+.tile__figure:after {
+    border: 1px solid #ff7500;
+    bottom: -4px;
+    content: "";
+    left: -4px;
+    opacity: 0;
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    transition: opacity .3s ease-out;
+}
+.tile_selected .tile__figure:after {
+    opacity: 1;
+}
+.tile__img {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.tile__sublabel {
+    display: block;
+    opacity: .5;
+}
+.tile_conflict .tile__figure {
+    background-color: #ccc;
+    background-size: 30px 30px;
+    background-image: linear-gradient(45deg,#ccc 25%,#ddd 25%,#ddd 50%,#ccc 50%,#ccc 75%,#ddd 75%,#ddd);
+}
+
+
+.drawer {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    width: 400px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    transform: translateX(0);
+    transition: all 300ms;
+}
+.drawer--active {
+    transform: translateX(-400px);
+}
+.drawer__head {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 0 1.5rem;
+}
+.drawer__close {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.box {
+    margin: 2rem 0 0;
+}
+
+.debug {
+    display: flex;
+}
+.debug__col {
+    flex: 0 0 50%;
+}
+pre {
+    color: #999;
+}
+.log::first-line {
+    color: #333;
+}
+        </style>
+
+    </head>
+    <body>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6SM3VW"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+
+        <main>
+            <div class="main__left">
+
+                <h1>Conflict GTM prototype</h1>
+
+                <h2>Read me!</h2>
+
+                <p>Currently "exterior 1" is selected as well as "interior 1".</p>
+                <p>If you try to select "interior 3", you'll find that it is not available when combined with "exterior 1" - This is a conflict that is resolved in a pop-over panel.</p>
+
+                <h2>Test these scenarios:</h2>
+
+                <p>Start up GTM and monitor the events with the following scenarios:</p>
+                <ol>
+                    <li>Click on a colour (ext/int) that is already selected. Nothing should change, no change is tracked.</li>
+                    <li>Click on a colour (ext/int) that <b><i>ISN'T</i></b> already selected. the colour would change, the change is tracked.</li>
+                    <li>Click on a exterior "color 3". This is a conflict, and follow the instructions in the panel.</li>
+                </ol>
+
+                <div class="debug" >
+
+                    <div class="debug__col" >
+                        <h2>Complete data layer</h2>
+                        <pre class="dl"></pre>
+                        <h2>Last data layer addition</h2>
+                        <pre class="dl__last"></pre>
+                    </div>
+
+                    <div class="debug__col" >
+                        <h2>Log</h2>
+                        <pre class="log"></pre>
+                    </div>
+
+                </div>
+
+            </div>
+            <aside class="main__right">
+
+                <section class="section section--exterior">
+                    <h3>Exterior</h3>
+                    <div class="tiles__body">
+                        <div class="tiles__item">
+                            <button type="button" class="tile tile_selected" data-category="Color" data-code="72701" data-name="Ext colour 1" data-action="select" >
+                                <span class="tile__figure"></span>
+                                Exterior color 1
+                            </button>
+                        </div>
+                        <div class="tiles__item">
+                            <button type="button" class="tile" data-category="Color" data-code="72702" data-name="Ext colour 2" >
+                                <span class="tile__figure"></span>
+                                Exterior color 2
+                            </button>
+                        </div>
+                        <div class="tiles__item">
+                            <button type="button" class="tile" data-category="Color" data-code="72703" data-name="Ext colour 3" >
+                                <span class="tile__figure"></span>
+                                Exterior color 3
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section--interior">
+                    <h3>Interior</h3>
+                    <div class="tiles__body">
+                        
+                        <div class="tiles__item">
+                            <button type="button" class="tile tile_selected" data-category="Upholstery" data-code="RCC001" data-name="Int colour 1" data-action="select">
+                                <span class="tile__figure"></span>
+                                Interior color 1
+                            </button>
+                        </div>
+                        
+                        <div class="tiles__item">
+                            <button type="button" class="tile" data-category="Upholstery" data-code="RCC002" data-name="Int colour 2" >
+                                <span class="tile__figure"></span>
+                                Interior color 2
+                            </button>
+                        </div>
+                        
+                        <div class="tiles__item">
+                            <button type="button" class="tile tile_conflict" data-category="Upholstery" data-code="RCC003" data-name="Int colour 3" >
+                                <span class="tile__figure"></span>
+                                Interior color 3
+                                <span class="tile__sublabel">(IN CONFLICT!)</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+
+            </aside>
+
+            <div class="drawer">
+
+                <div class="drawer__head">
+                    <button class="btn drawer__close" type="button">X</button>
+                </div>
+
+                <section class="section">
+                    <h3>Oops - that interior is sooo not matching. If you really want it, you'll need to switch exterior colour by clicking on it, then click "accept changes"</h3>
+                    <div class="tiles__body">
+                        <div class="tiles__item tile_selected">
+                            <button type="button" class="tile" data-category="Color" data-code="72700" data-name="Ext colour 1" data-action="select" >
+                                <span class="tile__figure"></span>
+                                Exterior color 1
+                            </button>
+                        </div>
+                        <div class="tiles__item">
+                            <button type="button" class="tile" data-category="Color" data-code="72701" data-name="Ext colour 2" >
+                                <span class="tile__figure"></span>
+                                Exterior color 2
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="box">
+                    <button class="btn btn_anim_push" type="button">Godkänn och fortsätt -></button>
+                </div>
+
+            </div>
+
+        </main>
+
+        <script>
+var proto = (function() {
+
+    let   conflictOptionA = null;
+    let   conflictOptionB = null;
+
+    const init = function() {
+        registerEvents();
+        observeDatalayer();
+        document.querySelector('.dl').innerText = JSON.stringify( window.dataLayer, null, 4 );
+    }
+
+    const fakeLog = function( ev, msg ) {
+        let line = ( Math.round( performance.now() / 1000 ) + '' ).padStart(6, '0');
+        let button = ( ev.target.classList.contains('tile') ? ev.target : ev.target.closest('.tile') );
+        if ( button ) {
+            let color = button.getAttribute('data-name');
+            line += `: [${color}]`;
+        }
+        line += ': ' + msg;
+        document.querySelector('.log').innerText = line + "\n" + document.querySelector('.log').innerText;
+    }
+
+    const getCategory = function( str, alt ) {
+        if ( !str ) {
+            console.error('getCategory str',str);
+            return;
+        }
+        category = ( alt ? 'exterior' : 'Color' );
+        if ( str.substr(0,3).toLowerCase() === 'int' ) {
+            category = ( alt ? 'interior' : 'Upholstery' );
+        }
+        return category;
+    }
+
+    const updateDateLayer = function( type='Choose', color, conflictSecondary=false ) {
+        // update from a button - a non conflict choice
+        category = getCategory(color);
+        categoryAlt = getCategory(color, true);
+        const output = {
+            'event'                 : `Config.${type}`,
+            'config.lastCategory'   : categoryAlt,
+            'config.lastOption'     : color,
+            'config.lastConflict'   : conflictSecondary,
+        }
+        if ( type==='Choose' ) {
+            output[ `config.${category}` ] = color;
+        }
+        window.dataLayer.push(output);
+    }
+
+    // EVENTS
+    const registerEvents = function() {
+
+
+        // TILE CLICK IN MAIN SIDEBAR
+        document.querySelectorAll('.main__right .tile').forEach( $el => {
+            $el.addEventListener( 'click', ev => {
+                let   section = ev.target.closest('.section');
+                let   button = ( ev.target.classList.contains('tile') ? ev.target : ev.target.closest('.tile') );
+                const color = button.getAttribute('data-name');
+                // TILE CLICK - ALREADY ACTIVE
+                if ( button.classList.contains('tile_selected') ) {
+                    fakeLog(ev, 'pre-selected color clicked. no change.');
+                    setTimeout(() => {
+                        alert('OOOPS. this tile was already selected, so nothing has changed.');
+                    });
+                // TILE CLICK - IN CONFLICT
+                } else if ( button.classList.contains('tile_conflict') ) {
+                    fakeLog(ev, 'conflict triggered. no change... yet.');
+                    // store the conflict primary choice (om this case the interior)
+                    conflictOptionA = color;
+                    conflictOptionB = document.querySelector('.section--exterior .tile_selected').getAttribute('data-name');
+                    document.querySelector('.drawer').classList.add('drawer--active');
+                    // update datalayer
+                    updateDateLayer( 'Conflict', color + '|' + document.querySelector('.section--exterior .tile_selected').getAttribute('data-name') );
+                // TILE CLICK - ALL OK - WILL SELECT NEW COLOUR
+                } else {
+                    fakeLog(ev, 'COLOUR CHANGE!. Note the change in the dataLayer.');
+                    // update the selected UI
+                    section.querySelector('.tile_selected').classList.remove('tile_selected');
+                    button.classList.add('tile_selected');
+                    // update datalayer
+                    updateDateLayer( 'Choose', color );
+                }
+            });
+        });
+
+        // TILE CLICK IN DRAWER
+        document.querySelectorAll('.drawer .tile').forEach( $el => {
+            $el.addEventListener( 'click', ev => {
+                let section = ev.target.closest('.section');
+                let button = ( ev.target.classList.contains('tile') ? ev.target : ev.target.closest('.tile') );
+                // TILE CLICK - ALREADY ACTIVE
+                if ( button.classList.contains('tile_selected') ) {
+                    // nothing - you've clicked on the default
+                    fakeLog(ev, 'clicked on default exterior colour - no change.');
+                // TILE CLICK - ALL OK - WILL SELECT NEW COLOUR
+                } else {
+                    const color = button.getAttribute('data-name');
+                    conflictOptionB = color;
+                    // update the selected UI
+                    section.querySelector('.tile_selected').classList.remove('tile_selected');
+                    button.classList.add('tile_selected');
+                    fakeLog(ev, 'selected new exterior colour - but not yet updated');
+                }
+            });
+        });
+
+        // APPROVE CONFLICT IN THE DRAWER
+        document.querySelector('.btn_anim_push').addEventListener( 'click', ev => {
+            // update datalayer with primary choice
+            updateDateLayer( 'Choose', conflictOptionA );
+            // update datalayer with secondary choice
+            updateDateLayer( 'Choose', conflictOptionB, true );
+            fakeLog(ev, 'DOUBLE COLOUR CHANGE!! Both interior and exterior updated');
+            document.querySelector('.drawer').classList.remove('drawer--active');
+        });
+
+        // CLOSE DRAWER
+        document.querySelectorAll('.drawer__close').forEach( $el => {
+            $el.addEventListener( 'click', ev => {
+                fakeLog(ev, 'close drawer');
+                document.querySelector('.drawer').classList.remove('drawer--active');
+            });
+        });
+        
+    }
+
+    // HACKY OBSERVATION OF DATALAYER OBJ
+    let dataLayerStr = JSON.stringify( window.dataLayer );
+    const observeDatalayer = function() {
+        window.requestAnimationFrame( observeDatalayer );
+        try {
+            const dataLayerLatest = JSON.stringify( window.dataLayer );
+            if ( dataLayerLatest !== dataLayerStr ) {
+                // NOW WE'VE SPOTTED IT'S BEEN UPDATED, RECOMPOSE THE DATALAYER AFTER ALL MESSAGES
+                const dataLayerFinal = {};
+                window.dataLayer.forEach( node => {
+                    const keys = Object.keys( node );
+                    keys.forEach( key => {
+                        const keySplit = key.split('.')
+                        if ( keySplit.length === 2 ) { // can only deal with one level deep
+                            if ( !dataLayerFinal[ keySplit[0] ] ) {
+                                dataLayerFinal[ keySplit[0] ] = {};
+                            }
+                            dataLayerFinal[ keySplit[0] ][ keySplit[1] ] = node[ key ];
+                        } else {
+                            dataLayerFinal[ key ] = node[ key ];
+                        }
+                    } )
+                } );
+                document.querySelector('.dl').innerText = JSON.stringify( dataLayerFinal, null, 4 );
+                dataLayerStr = dataLayerLatest;
+                // also the last thing sent the the DL
+                document.querySelector('.dl__last').innerText = JSON.stringify( window.dataLayer[ window.dataLayer.length - 1 ], null, 4 );
+                
+            }
+        } catch ( err ) {
+            console.error('fail', err)
+        }
+    }
+
+    return {
+        init : init()
+    }
+
+})(); 
+            </script>
+
+    </body>
+</html>
